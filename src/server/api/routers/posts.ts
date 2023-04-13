@@ -1,4 +1,3 @@
-import type { User } from "@clerk/nextjs/dist/api";
 import { clerkClient } from "@clerk/nextjs/server";
 import { TRPCError } from "@trpc/server";
 import { z } from "zod";
@@ -9,6 +8,7 @@ import {
   publicProcedure,
 } from "~/server/api/trpc";
 
+import type { User } from "@clerk/nextjs/dist/api";
 const filterUserForClient = (user: User) => {
   return {
     id: user.id,
